@@ -1,0 +1,47 @@
+some of you may have been puzzled by your program's output for PA4 (script for bear pairing).
+
+specifically, you may have had bears who met the mating criterion, but were not matched.
+
+there is a very good lesson to be learned here: computer arithmetic is not ideal.
+
+for example, you would expect |2.0 - 1.1| >= 0.9 to be true, but that's not the case in Java for doubles.
+
+this is because 1.1 cannot be exactly represented in binary. 
+
+note that representation for other numbers may lead to other results.
+
+similar problems with other types/languages (i observed this in python too).
+
+there are a couple of solutions - use integers (e.g., don't use 1.23 to represent a dollar and 23 cents, use 123 cents), or the BigDecimal package, which has infinite precision) (Decimal in python).
+
+i wrote a little java code to illustrate things, it's attached to this file - the output from the code is given below.
+
+cheers,
+adnan
+
+
+Main:    2.00 - 1.10 = 0.8999999999999999
+testFloat:   2.1 - 1.1 = 0.9999999
+testFloat:   |2.1 - 1.1| < 1.0
+testDouble1:   2.1 - 1.1 = 1.0
+testDouble1:   |2.1 - 1.1| >= 1.0
+testDouble2:   2.0 - 1.1 = 0.8999999999999999
+testDouble2:   |2.0 - 1.1| < 0.9
+testBigDecimal:  2.1 - 1.1 = 1.000000000000000000000000000000000000000000000000000
+testBigDecimal:  |2.1 - 1.1| >= 1.0
+
+nonidealities with computer arithmetic have in truly bizarre consequences. here are some examples from "Java Puzzlers"
+
+long A = 24 * 60 * 60 * 1000 * 1000;
+long B = 24 * 60 * 60 * 1000;
+// prints 5 not 1000
+System.out.println(A/B); 
+
+x == x // can evaluate to false
+
+i = i + 1 // can evaluate to true
+
+i < i + 1 // can evaluate to false
+
+
+
