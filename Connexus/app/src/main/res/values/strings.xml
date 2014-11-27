@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Connexus</string>
+    <string name="title_section1">LogIN</string>
+    <string name="title_section2">View All</string>
+    <string name="title_section3">Near by</string>
+    <string name="title_section4">Stream</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_view_streams">New Button</string>
+    <string name="title_activity_view_single_stream">ViewSingleStreamActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
